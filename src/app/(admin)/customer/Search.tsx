@@ -1,45 +1,38 @@
 'use client';
 
-import { useSearchParams, usePathname, useRouter } from 'next/navigation';
-import { useDebouncedCallback } from 'use-debounce';
-import { useParams } from 'next/navigation';
+import { CiSearch } from 'react-icons/ci';
+import { useSearchParams , usePathname , useRouter } from 'next/navigation';
 
-const Search = ({ callbackfunc }: { callbackfunc: any }) => {
+
+export default function Search({ placeholder }: { placeholder: string }) {
   const searchParams = useSearchParams();
-  const firstName = usePathname();
-  const { replace } = useRouter();
-
-  const handleSearch = useDebouncedCallback(async (term: string) => {
+  const pathname = usePathname();
+  const {replace} = useRouter();
+  function handleSearch(term: string) {
     const params = new URLSearchParams(searchParams);
     if (term) {
-      params.set('id', term);
+      params.set('query', term);
     } else {
-      params.delete('id');
+      params.delete('query');
     }
-    replace(`${firstName}?${params.toString()}`);
-
-    // Make a GET request to your API
-    const Paramter = useParams();
-    const id = Paramter.prams[0];
-    const response = await fetch(
-      `http://localhost:3000/api/admin/customer/${id}`
-    );
-    const data = await response.json();
-    console.log(data);
-  }, 300);
+    replace(`${pathname}?${params.toString()}`);
+    console.log(term);
+  }
 
   return (
-    <div className="relative flex flex-1 ml-9 mr-9 border-1">
+    <div className="relative flex flex-1 ml-9 mr-9">
+      <label htmlFor="search" className="sr-only">
+        Search
+      </label>
       <input
-        type="text"
-        className="input input-bordered input-accent w-full"
-        placeholder="Search..."
-        onChange={e => {  handleSearch(e.target.value);
-            callbackfunc()}}
+        className="peer block w-full rounded-md border border-gray-200 py-[9px] pl-10 text-sm outline-2 placeholder:text-gray-500"
+        placeholder={placeholder}
+        onChange={e => {
+          handleSearch(e.target.value);
+        }}
         defaultValue={searchParams.get('query')?.toString()}
       />
+      <CiSearch className="absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
     </div>
   );
-};
-
-export default Search;
+}
