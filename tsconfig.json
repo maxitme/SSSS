@@ -1,0 +1,73 @@
+{
+  "compilerOptions": {
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "baseUrl": "./",
+    "incremental": true,
+    "noImplicitAny": false,
+    "noImplicitOverride": false,
+    "noImplicitReturns": false,
+    "noImplicitThis": false,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@root/*": [
+        "./*"
+      ],
+      "@src/*": [
+        "./src/*"
+      ],
+      "@app/*": [
+        "./src/app/*"
+      ],
+      "@lib/*": [
+        "./src/lib/*"
+      ],
+      "@features/*": [
+        "./src/features/*"
+      ],
+      "@components/*": [
+        "./src/components/*"
+      ],
+      "@services/*": [
+        "./src/services/*"
+      ],
+      "@common/*": [
+        "./src/common/*"
+      ]
+    }
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "src/app/api/admin/customer/route.ts",
+    "src/app/(admin)/customer/addCustomer/page.tsx",
+    "src/app/(admin)/customer/editCustomer/[id]/page.tsx",
+    "src/app/(admin)/customer/EditCustomerForm.tsx",
+    "src/app/api/admin/customer/[id]/route.js",
+    "src/app/api/admin/customer/[id]/route.js",
+    "src/app/api/admin/customer/[id]/route.js",
+    "src/app/(admin)/customer/CustomerList.tsx"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

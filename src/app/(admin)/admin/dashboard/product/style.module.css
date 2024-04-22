@@ -1,0 +1,33 @@
+.zoneProduct{
+    margin-left: 255px;
+    width: 1230px;
+}
+.productContainer{
+    margin-top: 80px;
+    max-width: 100%;
+    margin-left: 20px;
+}
+.upDownList{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0px 10px 0px;
+}
+.upDown{
+    display: flex;
+}
+.upDown div{
+    padding-right: 10px;
+    font-size: 18px
+}
+.tableProduct{
+    display: grid;
+    grid-template-rows: auto auto;
+    margin-top: 10px;
+}
+.filter{
+    display: flex;
+    margin-top: 10px;
+}
+.filter div{
+    margin-right: 5px;
+}

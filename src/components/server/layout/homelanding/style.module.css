@@ -1,0 +1,595 @@
+.zoneBaner {
+  background-color: white;
+
+  /* position: relative; */
+}
+.baner {
+  /* position: absolute; */
+  position: relative;
+  width: 1160px;
+  background-color: white;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  /* top: -10px; */
+}
+.baner img {
+  width: 300px;
+}
+
+.banerSecond {
+  width: 1160px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  padding: 15px;
+}
+.b {
+  color: #575454;
+  text-align: center;
+  max-width: 100%;
+  font-weight: bold;
+}
+
+.b:hover {
+  color: #a7252f;
+  cursor: pointer;
+}
+.hr {
+  height: 5px;
+  background-color: #cdad70;
+  width: 90px;
+}
+
+.seeMore {
+  padding: 5px 15px;
+  background-color: #afafaf;
+  color: white;
+  margin: 0px 10px 0px 0px;
+}
+
+.store {
+  padding: 5px 15px;
+  background-color: #a7252f;
+  color: white;
+  margin: 0px 0px 0px 10px;
+}
+
+.seeMore:hover,
+.store:hover {
+  background-color: #cdad70;
+}
+
+.hrs {
+  height: 5px;
+  background-color: #cdad70;
+  width: 90px;
+  margin-left: 525px;
+  margin-top: 5px;
+}
+.hrss {
+  height: 5px;
+  background-color: #cdad70;
+  width: 90px;
+  margin-left: 180px;
+  margin-top: 5px;
+}
+.hrsss {
+  height: 5px;
+  background-color: #cdad70;
+  width: 90px;
+  margin-left: 145px;
+  margin-top: 5px;
+}
+.zoneBanerThree {
+  width: 1160px;
+}
+
+.collection {
+  border: 2px solid #a7252f;
+  margin-left: 8px;
+  margin-top: 5px;
+  padding: 5px;
+}
+.collectionFirts {
+  background-color: #cdad70;
+  border: 2px solid #cdad70;
+  color: white;
+  margin-left: 8px;
+  margin-top: 5px;
+  padding: 5px;
+}
+
+.collection:hover {
+  border: none;
+  background-color: #cdad70;
+  color: white;
+  border: 2px solid #cdad70;
+  cursor: pointer;
+}
+
+.end {
+  margin-top: 20px;
+  height: 15px;
+  background-color: #a7252f;
+}
+
+.title:hover {
+  cursor: pointer;
+  color: #a7252f;
+}
+
+.imageBanerLeft {
+  width: 320px;
+  height: 250px;
+}
+.imageBaner {
+  height: 250px;
+  width: 900px;
+}
+
+.cardKnowledgePhone {
+  width: 390px;
+  border: 1px solid #afafaf;
+}
+.blackDiv {
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  bottom: 10px;
+  color: white;
+  width: 279px;
+  height: 50px;
+  padding: 10px;
+  transition: all 0.5s ease;
+}
+.hiddenTextBlackDiv {
+  display: none;
+}
+.ho:hover .blackDiv {
+  height: 200px;
+  animation: 0.5s forwards;
+  .hiddenTextBlackDiv {
+    display: block;
+  }
+}
+
+.imageContainer {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+.imageContainer::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background-color: rgba(255, 255, 255, 0.2); /* Màu trắng có độ trong suốt */
+  transition:
+    width 0.3s ease,
+    height 0.3s ease,
+    top 0.3s ease,
+    left 0.3s ease;
+  z-index: 1;
+}
+.imageContainer:hover::before {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.cardContainer {
+  position: relative;
+  overflow: hidden;
+}
+.cardContainer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 270px;
+  height: 270px;
+  background-size: cover;
+  z-index: 1; /* Đảm bảo ảnh mới ở phía dưới ảnh gốc */
+  opacity: 1; /* Điều chỉnh độ mờ của ảnh */
+  border-radius: 6.5px 6.5px 0px 0px;
+  transition: left 1s ease;
+}
+.cardContainer:hover::before {
+  left: 0;
+  background-image: url('https://bizweb.dktcdn.net/thumb/large/100/436/707/products/dsc05054.jpg?v=1709469094177');
+}
+.cardContainer:hover {
+  .hiddenDiv {
+    opacity: 1; /* Hiển thị thẻ div khi hover vào */
+    visibility: visible;
+  }
+}
+
+.hiddenDiv {
+  color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0); /* Màu nền trắng có độ mờ */
+  padding: 20px;
+  opacity: 0; /* Ẩn thẻ div ban đầu */
+  visibility: hidden;
+  transition:
+    opacity 0.5s ease,
+    visibility 0.5s ease; /* Hiệu ứng chuyển động chậm */
+  z-index: 1; /* Đảm bảo thẻ div nằm trên hình ảnh */
+}
+.hiddenDiv div {
+  background-color: #a7252f;
+  max-width: 100px;
+  text-align: center;
+  padding: 3px;
+  margin-top: 210px;
+  margin-left: 65px;
+}
+.hiddenDiv div:hover {
+  cursor: pointer;
+}
+
+.cardCollectionContainer {
+  position: relative;
+  overflow: hidden;
+}
+.cardCollectionContainer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 278px;
+  height: 279px;
+  background-size: cover;
+  z-index: 1; /* Đảm bảo ảnh mới ở phía dưới ảnh gốc */
+  opacity: 1; /* Điều chỉnh độ mờ của ảnh */
+  border-radius: 6.5px 6.5px 0px 0px;
+  transition: left 1s ease;
+}
+.cardCollectionContainer:hover::before {
+  left: 0;
+  background-image: url('https://bizweb.dktcdn.net/thumb/large/100/436/707/products/huong-van-cat0149-copy.jpg?v=1703156607183');
+}
+.cardCollectionContainer:hover {
+  .hiddenCollectionDiv {
+    opacity: 1; /* Hiển thị thẻ div khi hover vào */
+    visibility: visible;
+  }
+}
+
+.hiddenCollectionDiv {
+  color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0); /* Màu nền trắng có độ mờ */
+  padding: 20px;
+  opacity: 0; /* Ẩn thẻ div ban đầu */
+  visibility: hidden;
+  transition:
+    opacity 0.5s ease,
+    visibility 0.5s ease; /* Hiệu ứng chuyển động chậm */
+  z-index: 1; /* Đảm bảo thẻ div nằm trên hình ảnh */
+}
+.hiddenCollectionDiv .chooseMore {
+  max-width: 100%;
+  text-align: center;
+  margin-top: 210px;
+  display: flex;
+}
+.hiddenCollectionDiv .chooseMore div {
+  background-color: #a7252f;
+  padding: 3px;
+  width: 200px;
+}
+.hiddenCollectionDiv .chooseMore:hover {
+  cursor: pointer;
+}
+.cardKnowledgeContainer {
+  overflow: hidden;
+}
+.cardKnowledgePhone .antCardCover {
+  transition: transform 0.5s ease; /* Áp dụng hiệu ứng chuyển động mềm mại */
+}
+.cardKnowledgePhone:hover .antCardCover {
+  transform: scale(
+    1.05
+  ); /* Phóng to hình ảnh trong thẻ Card lên 105% khi hover vào */
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .zoneBanerSecondHindden {
+    max-width: 100%;
+  }
+  .zoneBanerSecond {
+    display: none;
+  }
+  .hrHidden {
+    height: 5px;
+    background-color: #cdad70;
+    width: 90px;
+    margin-left: 285px;
+  }
+  .hrsHidden {
+    height: 5px;
+    background-color: #cdad70;
+    width: 90px;
+    margin-left: 275px;
+    margin-top: 5px;
+  }
+
+  .sellingProduct {
+    display: none;
+  }
+  .zoneBanerThreeHindden {
+    max-width: auto;
+    max-height: auto;
+  }
+
+  .zoneCollection {
+    display: none;
+  }
+
+  .zoneCollectionHidden {
+    max-width: 100%;
+    max-height: 100%;
+  }
+  .collectionFirtsHidden {
+    color: white;
+    background-color: #cdad70;
+    border: 2px solid #cdad70;
+    margin-left: 60px;
+    margin-top: 5px;
+    padding: 5px;
+    width: 100px;
+  }
+
+  .collectionSecondHidden {
+    border: 2px solid #a7252f;
+    margin-top: 5px;
+    padding: 5px;
+    width: 170px;
+    font-size: 16px;
+  }
+
+  .collectionThreeHidden {
+    border: 2px solid #a7252f;
+    margin-left: 8px;
+    margin-top: 5px;
+    padding: 5px;
+  }
+  .collectionFourHidden {
+    border: 2px solid #a7252f;
+    margin-left: 8px;
+    margin-top: 5px;
+    padding: 5px;
+    width: 100px;
+  }
+  .zoneBanerThreeHindden {
+    max-width: 100%;
+  }
+
+  .collectionSecondHidden:hover,
+  .collectionThreeHidden:hover,
+  .collectionFourHidden:hover {
+    color: white;
+    background-color: #cdad70;
+    border: 2px solid #cdad70;
+    cursor: pointer;
+  }
+  .banerEndCollection {
+    display: none;
+  }
+  .banerEndCollectionHidden {
+    max-width: 100%;
+  }
+  .imageBanerLeftHidden {
+    width: 100px;
+    height: 160px;
+  }
+  .imageBanerHidden {
+    width: 500px;
+    height: 160px;
+  }
+  .knowledge {
+    display: none;
+  }
+  .knowledgeHidden {
+    max-width: 100%;
+  }
+  .card {
+    width: 200;
+    border: '1px solid #AFAFAF';
+  }
+  .zoneCollectionPhoneHindden {
+    display: none;
+  }
+  .hiddenCollectionDiv {
+    display: none;
+  }
+  .blackDiv {
+    width: 155px;
+    font-size: 10px;
+  }
+  .ho:hover .blackDiv {
+    height: 100px;
+    animation: 0.5s forwards;
+    .hiddenTextBlackDiv {
+      display: block;
+    }
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .zoneBanerSecondHindden {
+    display: none;
+  }
+  .sellingProductHindden {
+    display: none;
+  }
+  .zoneCollectionHidden,
+  .banerEndCollectionHidden,
+  .knowledgeHidden {
+    display: none;
+  }
+
+  .card {
+    width: 270;
+    border: '1px solid #AFAFAF';
+  }
+  .zoneCollectionPhoneHindden {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .zoneBanerSecond {
+    display: none;
+  }
+
+  .zoneBanerSecondHindden {
+    margin-top: 0px;
+    height: 100%;
+  }
+  .banerSecondHindden .hrHidden {
+    height: 5px;
+    background-color: #cdad70;
+    width: 90px;
+    margin-left: 140px;
+  }
+  .sellingProduct {
+    display: none;
+  }
+  .sellingProductHindden {
+    max-width: 100%;
+    margin-top: -290px;
+  }
+  .sellingProductHindden .hrsHidden {
+    height: 5px;
+    background-color: #cdad70;
+    width: 90px;
+    margin-left: 145px;
+    margin-top: 5px;
+  }
+
+  .zoneBanerThreeHindden {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 10px;
+  }
+  .card {
+    width: 120px;
+  }
+  .card .cardMeta {
+    font-size: 10px;
+    margin-left: -20px;
+  }
+  .cardText {
+    font-size: 10px;
+    margin-left: -20px;
+  }
+  .zoneCollectionHidden {
+    display: none;
+  }
+  .collectionGridPhone {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    font-size: 10px;
+  }
+  .zoneCollection {
+    display: none;
+  }
+  .zoneCollectionPhoneHindden {
+    max-width: 100%;
+  }
+  .hrsHiddenPhone {
+    height: 5px;
+    background-color: #cdad70;
+    width: 90px;
+    margin-left: 145px;
+    margin-top: 5px;
+  }
+  .collectionFirtsPhoneHidden {
+    color: white;
+    background-color: #cdad70;
+    border: 2px solid #cdad70;
+    margin-top: 5px;
+    padding: 7px;
+    width: 70px;
+    font-size: 7px;
+    margin-left: 8px;
+  }
+  .collectionSecondPhoneHidden {
+    border: 2px solid #a7252f;
+    margin-top: 5px;
+    width: 80px;
+    font-size: 7px;
+    padding: 7px 0px 7px 0px;
+    margin-right: 5px;
+  }
+  .collectionThreePhoneHidden {
+    border: 2px solid #a7252f;
+    margin-top: 5px;
+    width: 80px;
+    font-size: 7px;
+    padding: 7px 0px 7px 0px;
+  }
+  .collectionFourPhoneHidden {
+    border: 2px solid #a7252f;
+    margin-top: 5px;
+    padding: 7px;
+    width: 70px;
+    font-size: 7px;
+  }
+  .store {
+    font-size: 10px;
+  }
+
+  .banerEndCollection {
+    display: none;
+  }
+
+  .banerEndCollectionHidden {
+    max-width: 100%;
+  }
+  .imageBanerLeftHidden {
+    height: 80px;
+  }
+  .imageBanerHidden {
+    height: 80px;
+  }
+
+  .hrss {
+    height: 5px;
+    background-color: #cdad70;
+    width: 90px;
+    margin-left: 141px;
+    margin-top: 5px;
+  }
+  .knowledge {
+    max-width: 100%;
+  }
+  .cardKnowledgePhone {
+    width: 113px;
+  }
+
+  .textKnowledgePhone {
+    font-size: 9px;
+    margin-left: -20px;
+  }
+  .knowledge p {
+    font-size: 9px;
+    margin-left: -20px;
+  }
+
+  .knowledgeHidden {
+    display: none;
+  }
+}

@@ -1,0 +1,170 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = "postgresql://postgres:123456@localhost:5432/sale?schema=public"
+}
+
+model Account {
+  id                 String    @id @default(cuid())
+  userId             String
+  providerType       String
+  providerId         String
+  providerAccountId  String
+  refreshToken       String?
+  accessToken        String?
+  accessTokenExpires DateTime?
+  createdAt          DateTime  @default(now())
+  updatedAt          DateTime  @updatedAt
+  user               User      @relation(fields: [userId], references: [id])
+
+  @@unique([providerId, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  userId       String
+  expires      DateTime
+  sessionToken String   @unique
+  accessToken  String   @unique
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  user         User     @relation(fields: [userId], references: [id])
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String?   @unique
+  emailVerified DateTime?
+  image         String?
+  password      String?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  accounts      Account[]
+  sessions      Session[]
+  Order         Order[]
+}
+
+model VerificationRequest {
+  id         String   @id @default(cuid())
+  identifier String
+  token      String   @unique
+  expires    DateTime
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@unique([identifier, token])
+}
+
+model Category {
+  id           Int        @id @default(autoincrement())
+  name         String
+  description  String?    @db.Text
+  slug         String     @unique
+  parentId     Int? // Cho phép tồn tại các danh mục con
+  children     Category[] @relation("Subcategory")
+  parent       Category?  @relation("Subcategory", fields: [parentId], references: [id])
+  products     Product[]
+  customFields Json? // Đối với các thuộc tính đơn giản bổ sung
+}
+
+model Product {
+  id                Int                @id @default(autoincrement())
+  name              String
+  description       String?            @db.Text
+  price             Float
+  image             String
+  slug              String             @unique
+  categoryId        Int
+  category          Category           @relation(fields: [categoryId], references: [id])
+  bestSeller        Boolean            @default(false)
+  onPromotion       Boolean            @default(false)
+  seoTags           String?
+  status            Boolean
+  // Relationships
+  productProperties ProductProperty[]
+  units             UnitConversion[]
+  WarehouseDetails  WarehouseDetails[]
+  OrderDetails      OrderDetails[]
+}
+
+model ProductProperty {
+  id        Int     @id @default(autoincrement())
+  productId Int
+  key       String
+  value     String
+  product   Product @relation(fields: [productId], references: [id])
+}
+
+model UnitConversion {
+  id               Int     @id @default(autoincrement())
+  productId        Int
+  fromUnit         String
+  toUnit           String
+  conversionFactor Float
+  product          Product @relation(fields: [productId], references: [id])
+}
+
+model Warehouse {
+  id               Int                @id @default(autoincrement())
+  name             String // Tên kho hàng
+  location         String // Vị trí
+  description      String? // Mô tả
+  createdAt        DateTime           @default(now()) // Thời gian tạo
+  updatedAt        DateTime           @updatedAt // Thời gian cập nhật
+  // Mối quan hệ
+  warehouseDetails WarehouseDetails[] // Chi tiết kho hàng
+}
+
+model WarehouseDetails {
+  id          Int       @id @default(autoincrement())
+  warehouseId Int // ID kho hàng
+  productId   Int // ID sản phẩm
+  quantity    Int // Số lượng
+  createdAt   DateTime  @default(now()) // Thời gian tạo
+  updatedAt   DateTime  @updatedAt // Thời gian cập nhật
+  // Mối quan hệ
+  warehouse   Warehouse @relation(fields: [warehouseId], references: [id])
+  product     Product   @relation(fields: [productId], references: [id])
+}
+
+model Order {
+  id           String         @id @default(cuid())
+  userId       String // ID người dùng
+  status       String // Ví dụ: 'đang chờ', 'đã gửi', 'đã giao'
+  total        Float // Tổng tiền
+  createdAt    DateTime       @default(now()) // Thời gian tạo
+  updatedAt    DateTime       @updatedAt // Thời gian cập nhật
+  // Mối quan hệ
+  user         User           @relation(fields: [userId], references: [id])
+  orderDetails OrderDetails[] // Chi tiết đơn hàng
+}
+
+model OrderDetails {
+  id        Int      @id @default(autoincrement())
+  orderId   String // ID đơn hàng
+  productId Int // ID sản phẩm
+  quantity  Int // Số lượng
+  price     Float // Giá tại thời điểm đặt hàng
+  createdAt DateTime @default(now()) // Thời gian tạo
+  updatedAt DateTime @updatedAt // Thời gian cập nhật
+  // Mối quan hệ
+  order     Order    @relation(fields: [orderId], references: [id])
+  product   Product  @relation(fields: [productId], references: [id])
+}
+
+model Customer {
+  id               Int      @id @default(autoincrement())
+  firstName        String
+  lastName         String
+  email            String 
+  phoneNumber      String?
+  birthDate        DateTime?
+  gender           String?
+  marketingConsent Boolean  @default(false)
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime? @updatedAt
+}

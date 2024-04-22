@@ -1,0 +1,381 @@
+.hoverableMenu,
+.hoverableProduct,
+.hoverableContact {
+  position: relative;
+  transition:
+    transform 0.3s,
+    background-color 0.5s;
+}
+
+
+
+.hoverableProduct:hover,
+.hoverableMenu:hover,
+.hoverableContact:hover {
+  background-color: #cdad70;
+  color: white;
+}
+
+.hoverableMenu .dropdownMenu {
+  display: none;
+  position: absolute;
+  left: 0;
+  color: black;
+  background-color: white;
+  font-weight: normal;
+  width: 340px;
+  padding: 5px;
+  animation: moveUp 0.5s forwards;
+}
+
+.hoverableMenu:hover .dropdownMenu {
+  display: block;
+}
+
+.dropdownMenu:hover {
+  background-color: #cdad70;
+  color: white;
+}
+
+.hoverableProduct .dropdownProduct {
+  display: none;
+  position: absolute;
+  left: 0;
+  color: black;
+  background-color: white;
+  font-weight: normal;
+  width: 200px;
+  height: 272px;
+  animation: moveUpProduct 0.5s forwards;
+}
+
+@keyframes moveUp {
+  from {
+    bottom: -245%; /* initial position */
+  }
+  to {
+    bottom: -145%; /* final position */
+  }  
+}
+
+@keyframes moveUpProduct {
+  from {
+    bottom: -300px; /* initial position */
+  }
+  to {
+    bottom: -680%; /* final position */
+  }  
+}
+
+.hoverableProduct:hover .dropdownProduct {
+  display: block;
+}
+.listItem,
+.listItemAgarwoodring,
+.listItemTea,
+.listItemAgarwoodincense {
+  padding: 5px;
+  position: relative;
+}
+.listItem:hover,
+.listItemAgarwoodring:hover,
+.listItemTea:hover,
+.listItemAgarwoodincense:hover {
+  background-color: #cdad70;
+  color: white;
+}
+
+.itemAgarwoodring {
+  /* display: none; */
+  position: absolute;
+  top: 0;
+  right: -100%;
+  color: black;
+  background-color: white;
+  font-weight: normal;
+  width: 200px;
+  margin-left: -17px;
+}
+
+.listItemAgarwoodring:hover .itemAgarwoodring {
+  display: block;
+}
+
+.itemForAgarwoodring {
+  padding: 5px;
+}
+.itemForAgarwoodring:hover {
+  background-color: #cdad70;
+  color: white;
+}
+
+.itemTea {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: -100%;
+  color: black;
+  background-color: white;
+  font-weight: normal;
+  width: 200px;
+  margin-left: -17px;
+}
+
+.listItemTea:hover .itemTea {
+  display: block;
+}
+
+.itemForTea {
+  padding: 5px;
+}
+.itemForTea:hover {
+  background-color: #cdad70;
+  color: white;
+}
+
+.itemAgarwoodincense {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: -100%;
+  color: black;
+  background-color: white;
+  font-weight: normal;
+  width: 200px;
+  margin-left: -17px;
+}
+
+.listItemAgarwoodincense:hover .itemAgarwoodincense {
+  display: block;
+}
+
+.itemForAgarwoodincense {
+  padding: 5px;
+}
+.itemForAgarwoodincense:hover {
+  background-color: #cdad70;
+  color: white;
+}
+.logo {
+  margin: 10px 35px 10px 80px;
+  padding-left: 58px;
+  padding-right: 40px;
+}
+.drawer {
+  display: none;
+}
+.zoneMenuTablet {
+  display: none;
+}
+.contactStore:hover ,.loginAndResignter a:hover{
+  color: #a7252f;
+}
+.hotlinePhone{
+    color: #A7252F   ;
+    font-weight: bold  
+}
+.hotlinePhone:hover{
+  color: #cdad70;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .headersFirts {
+    display: none;
+  }
+  .headersTwo {
+    display: none;
+  }
+  .Menu {
+    display: none;
+  }
+  .zoneMenuPhone {
+    display: none;
+  }
+  .menuTablet {
+    width: auto;
+  }
+  .zoneMenuTablet {
+    width: 100%;
+    display: block;
+  }
+  .drawerMenu {
+    margin-left: 0px;
+    display: flex;
+  }
+  .imgTablet {
+    width: 179px;
+    height: 64px;
+  }
+
+  .countShopping {
+    position: relative;
+  }
+  .count {
+    position: absolute;
+    top: 19px;
+    left: 18px;
+    border: 1px solid #a7252f;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    background-color: #a7252f;
+  }
+  .count p {
+    position: absolute;
+    color: white;
+    top: -4.5px;
+    left: 3.5px;
+  }
+  .location,
+  .shopping {
+    font-size: 25px;
+    margin-top: 25px;
+  }
+  .search {
+    font-size: 25px;
+    margin-top: 25px;
+    margin-right: 10px;
+  }
+
+  .location:hover,
+  .search:hover,
+  .shopping:hover {
+    cursor: pointer;
+  }
+
+  .hiddens {
+    border-bottom: 2px solid #a7252f;
+    margin-top: 10px;
+    position: relative;
+  }
+
+  .hiddens input {
+    width: 100%;
+    padding: 0px 50px 0px 10px;
+  }
+  .unhiddens {
+    visibility: hidden;
+  }
+  .hiddens input:focus {
+    outline: none;
+    border: none;
+  }
+  .hiddenSearch {
+    position: absolute;
+    top: 0px;
+    right: 15px;
+  }
+  .hiddenSearchsPhone {
+    visibility: hidden;
+  }
+  .zoneAllHeader {
+    height: 100px;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .zoneMenuTablet {
+    visibility: hidden;
+  }
+  .hiddenSearchs {
+    display: none;
+  }
+  .zoneMenuPhone {
+    display: none;
+  }
+  .hiddenSearchsPhone {
+    display: none;
+  }
+  .dropdownMenu {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .headersFirts {
+    visibility: hidden;
+  }
+
+  .headersTwo {
+    visibility: hidden;
+  }
+
+  .zoneMenuTablet {
+    visibility: hidden;
+  }
+  .Menu {
+    visibility: hidden;
+  }
+  .hiddenSearchs {
+    visibility: hidden;
+  }
+
+  .zoneMenuPhone {
+    max-width: 100%;
+    margin-top: -65%;
+  }
+  .menuPhone {
+    max-width: 100%;
+  }
+  .drawerMenuPhone {
+    max-width: 100%;
+  }
+  .drawerMenuPhone {
+    display: flex;
+  }
+  .drawerMenuPhone .location {
+    margin-top: 12px;
+    margin-left: 5px;
+  }
+  .searchPhone {
+    margin-right: 10px;
+    margin-top: 15px;
+  }
+  .shoppingPhone {
+    margin-top: 15px;
+  }
+  .drawerMenuPhone .countShoppingPhone {
+    position: relative;
+  }
+  .countPhone {
+    position: absolute;
+    top: 31px;
+    right: 20px;
+    font-size: 8px;
+    background-color: #a7252f;
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    text-align: center;
+    color: white;
+  }
+
+  .hiddensPhone {
+    border-bottom: 2px solid #a7252f;
+    margin-top: 10px;
+    position: relative;
+  }
+
+  .hiddensPhone input {
+    width: 100%;
+    padding: 0px 50px 0px 10px;
+  }
+  .unhiddensPhone {
+    visibility: hidden;
+  }
+  .hiddensPhone input:focus {
+    outline: none;
+    border: none;
+  }
+  .hiddenSearchPhone {
+    position: absolute;
+    top: 0px;
+    right: 15px;
+  }
+  .zoneAllHeader {
+    height: 70px;
+  }
+  .hiddenSearchsPhone {
+    margin-top: -39px;
+  }
+}

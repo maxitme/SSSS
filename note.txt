@@ -1,0 +1,16 @@
+npx prisma generate
+npx prisma migrate save --name your-migration-name
+npx prisma migrate dev --create-only
+
+
+
+https://www.prisma.io/docs/orm/prisma-migrate/getting-started
+
+https://swr.vercel.app/examples/basic
+
+
+
+step to migrate 
+npx prisma generate      
+npx prisma migrate dev --create-only
+npx prisma migrate

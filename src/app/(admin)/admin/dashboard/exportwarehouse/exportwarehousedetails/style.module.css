@@ -1,0 +1,96 @@
+.zoneProduct {
+  margin-left: 255px;
+  width: 1230px;
+}
+.productContainer {
+  margin-top: 80px;
+  max-width: 100%;
+  margin-left: 20px;
+}
+
+.container {
+  width: 95%;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.zone{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.searchBox {
+  width: 100%;
+  margin-bottom: 20px;
+  margin-right: 90px;
+}
+.searchBox input{
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  margin-top: 10px;
+}
+.selectOrder{
+    width: 520px;
+}
+.selectOrder span{
+    margin-right: 5px;
+}
+.span{
+    margin-top: 10px;
+}
+
+.branch{
+    display: flex;
+    
+    margin-top: 10px;
+}
+
+
+.button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.blue {
+  background-color: #007bff;
+  color: white;
+}
+.gray {
+  background-color: #6c757d;
+  color: white;
+}
+.tableContainer {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+.tableContainer table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.tableContainer th,
+.tableContainer td {
+  text-align: left;
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+.tableContainer th {
+  background-color: #f8f9fa;
+}
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}

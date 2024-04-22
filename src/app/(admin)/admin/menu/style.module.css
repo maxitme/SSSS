@@ -1,0 +1,20 @@
+.dropmenu {
+  background-color: #9b1f22;
+  width: 256px;
+}
+.dropmenu{
+    color: #9b1f22;
+}
+
+.img {
+  width: 200px;
+}
+.containerMenu{
+  border-right:1px solid #C4CDD5;
+  height: 680px;
+  overflow-y: auto;
+  scrollbar-width: thin; /* Đảm bảo thanh cuộn mỏng hơn */
+  scrollbar-color: rgba(155,31,34,0.8) rgba(155,31,34,0.1)
+}
+
+

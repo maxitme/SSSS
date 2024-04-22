@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  /* color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb)); */
+  background-color: white;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.ant-carousel .slick-prev,
+.ant-carousel .slick-next,
+.ant-carousel .slick-prev:hover,
+.ant-carousel .slick-next:hover {
+  font-size: inherit;
+  color: currentColor;
+}
+
+/* Định dạng cho màn hình nhỏ (Mobile) */
+@media only screen and (max-width: 600px) {
+
+  /* CSS cho các yếu tố trên màn hình mobile */
+  .container {
+    padding: 10px;
+  }
+}
+
+/* Định dạng cho màn hình trung bình (Tablet) */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+
+  /* CSS cho các yếu tố trên màn hình tablet */
+  .container {
+    padding: 15px;
+  }
+}
+
+/* Định dạng cho màn hình lớn (Desktop) */
+@media only screen and (min-width: 1025px) {
+  /* CSS cho các yếu tố trên màn hình desktop */
+}

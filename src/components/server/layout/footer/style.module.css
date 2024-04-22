@@ -1,0 +1,75 @@
+.footer{
+    background-color: white;
+    height: 20px;
+    border-top: 1px solid #A7252F;
+    margin-top: 50px;
+    max-width: 100%;
+}
+
+.imgContact{
+    width: 35px;
+    margin-right: 10px;
+}
+
+.inputMail{
+    border: 1px solid gray;
+    padding: 1px;
+    padding-left: 5px;
+}
+.inputMail:focus{
+ 
+      outline: none;
+}
+
+.btnResignter{
+    background-color: #A7252F;
+    color: white;
+    padding: 2px 5px 2px 5px;
+}
+
+.footerEnd{
+    background-color: #A7252F;
+    color: white;
+    padding: 10px 0px 10px 0px;
+}
+
+.fanpage{
+    height: 150px;
+    width: 320px;
+    background-image: url('https://scontent.fsgn2-7.fna.fbcdn.net/v/t39.30808-6/410775434_737312225086411_2946091819390935104_n.jpg?stp=cp6_dst-jpg_s552x414&_nc_cat=108&ccb=1-7&_nc_sid=5f2048&_nc_ohc=XMFkA03gYJAAX8VZBNc&_nc_ht=scontent.fsgn2-7.fna&oh=00_AfCuYRhIRjlQ484gAgVpUMmG571N5S3PQDqnrt3U55v6dw&oe=66004F3F');
+}
+
+.fanpageItem{
+    border: 1px solid white;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .footerUnHidden{
+        display: none;
+    }
+
+}
+@media screen and (min-width: 1025px) {
+  .footerHidden{
+    display: none;
+  }
+}
+
+@media screen and (max-width: 450px) {
+    .footer{
+        max-width: 100%;
+        max-height: 100%;
+    }
+    .footerUnHidden{
+        display: none;
+
+    }
+
+    .textFooter{
+        font-size: 15px;
+    }
+    .textFooter b{
+        font-size: 15px;
+    }
+
+}

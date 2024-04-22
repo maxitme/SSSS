@@ -1,0 +1,97 @@
+.zoneProduct {
+  margin-left: 255px;
+  width: 1230px;
+}
+.productContainer {
+  margin-top: 80px;
+  max-width: 100%;
+  margin-left: 20px;
+}
+
+.main {
+  padding: 50px;
+  font-family: Arial, sans-serif;
+}
+
+.tableContainer {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  text-align: left;
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+.table th {
+  background-color: #f2f2f2;
+}
+
+.button,
+.buttonSave {
+  background-color: #4caf50; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.buttonSave {
+  background-color: #008cba; /* Blue */
+}
+
+
+
+.container {
+  text-align: center;
+  background-color: #fff;
+  padding: 50px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.container h2 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+
+
+.buttonBlue {
+
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #0066ff;
+}
+
+.buttonGreen {
+  background-color: #28a745;
+
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  /* Here you should add the actual icons as background images */
+}

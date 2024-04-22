@@ -1,0 +1,47 @@
+.searchContainer{
+    max-width: 100%;
+    position: relative;
+}
+.inputSearch{
+    width: 800px;
+    height: 30px;
+    padding-left: 25px;
+    margin-right: 70px;
+}
+
+.iconSearch{
+    position: absolute;
+    top: 10px;
+    left: 5px;
+}
+.header{
+    display: flex;
+    border-bottom: 1px solid gray;
+    width: 1250px;
+    padding-bottom: 5px;
+    position: fixed;
+    z-index: 1;
+    background-color: white;
+    margin-left: 20px;
+    
+}
+.imageUser{
+    border: 1px solid #9B1F22;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    text-align: center;
+    background-color: #9B1F22;
+    margin-right: 5px;
+}
+.imageUser p{
+    margin-top: 5px;
+}
+.infoUserContainer{
+    display: flex;
+}
+.notificationContainer{
+    /* position: relative; */
+    margin-left: 15px;
+}
+
